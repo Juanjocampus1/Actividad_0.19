@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.empresa.actividad_019.HelloController">
+    <tabs>
+        <Tab text="insercion de datos">
+            <content>
+                <VBox spacing="10">
+                    <Label text="Nombre:" />
+                    <TextField fx:id="nombreTextField" />
+                    <Label text="Edad:" />
+                    <TextField fx:id="edadTextField" />
+                    <Label text="Email:" />
+                    <TextField fx:id="emailTextField" />
+                    <Button onAction="#agregarPersona" text="Agregar Persona" />
+                </VBox>
+            </content>
+        </Tab>
+        <Tab text="consumo de datos">
+            <content>
+                <VBox spacing="10">
+                    <HBox spacing="10">
+                        <ComboBox fx:id="ordenarComboBox" />
+                        <Button text="Ordenar por nombre" onAction="#ordenarPorNombre" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <ComboBox fx:id="ordenarEdadComboBox" />
+                        <Button text="Ordenar por edad" onAction="#ordenarPorEdad" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <ComboBox fx:id="ordenarEmailLongitudComboBox" />
+                        <Button text="Ordenar por longitud de correo electrónico" onAction="#ordenarPorLongitudEmail" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <TextField fx:id="buscadorTextField" onKeyReleased="#buscar" />
+                    </HBox>
+                    <TableView fx:id="personasTable">
+                        <columns>
+                            <TableColumn text="Nombre" fx:id="nombreColumn" />
+                            <TableColumn text="Edad" fx:id="edadColumn" />
+                            <TableColumn text="Email" fx:id="emailColumn" />
+                        </columns>
+                    </TableView>
+                    <Button text="Mostrar" onAction="#mostrarPersonas" />
+                </VBox>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
